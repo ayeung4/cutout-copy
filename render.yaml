@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: cutout-copy-backend
+    env: node
+    plan: starter
+    buildCommand: ""
+    startCommand: "node server.js"
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8787
+      - key: REMOVE_BG_API_KEY
+        sync: false
